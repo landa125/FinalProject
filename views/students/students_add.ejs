@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student - Add</title>
+</head>
+<body>
+<h1>Add New Student</h1>
+<form action="/student/insert" method="get">
+    Social Security: <input name="ssn" type="text" />
+    Grade Level: <input name="grade_level" type="text"/>
+    First Name: <input name="first_name" type="text"/>
+    Last Name:  <input name="last_name" type="text"/><br/>
+    Dorm:
+    <br />
+    <% for(var i = 0; dormitory_result.length > i; i++) { %>
+        <input type="checkbox" name="dorm_name" value="<%=
+            dormitory_result[i].dorm_name%>"><%=dormitory_result[i].dorm_name%>
+    <br/>
+    <%}%>
+    <input type="submit" />
+</form>
+</body>
+</html>

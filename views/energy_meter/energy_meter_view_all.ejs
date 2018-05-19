@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Energy Meter - View All </title>
+</head>
+<body>
+
+<h1>Energy Meters</h1>
+<a href="/energy_meter/add">Add A New Energy Meter</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Meter Name</th>
+        <th>Average Annual Energy Consumed</th>
+        <th>Year</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    <% for(var i = 0; i < energy_meters.length; i++) { %>
+    <tr>
+
+
+        <td><%= energy_meters[i].meter_id %></td>
+        <td><%= energy_meters[i].meter_name %></td>
+        <td><%= energy_meters[i].avg_annual_energy_consumed %></td>
+        <td><%= energy_meters[i].year %></td>
+        <td>
+        <a href='/energy_meter/edit/?meter_id=<%= energy_meters[i].meter_id %>'>
+            Edit
+        </a>
+        </td>
+        <td>
+        <a href='/energy_meter/delete/?meter_id=<%= energy_meters[i].meter_id %>'>
+            Delete
+        </a>
+    </tr>
+    <% } %>
+</table>
+<% if(locals.was_successful_delete) { %>
+<div>
+    <p>You Successfully Deleted A Meter!</p>
+</div>
+<% } %>
+</body>
+</html>

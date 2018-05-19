@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Village - View All </title>
+</head>
+    <body>
+
+        <h1>Query Number 7</h1>
+
+        <table border="1">
+            <tr>
+
+                <th>Name</th>
+                <th>Number Of Students</th>
+                <th>Dorm Number</th>
+                <th>Average Annual Energy Consumed</th>
+                <th>Year </th>
+                <th>Meter ID</th>
+            </tr>
+            <% for(var i = 0; i < villages.length; i++) { %>
+                <tr>
+
+                    <td><%= villages[i].village_name %></td>
+                    <td><%= villages[i].number_of_students %></td>
+                    <td><%= villages[i].dorm_number %></td>
+                    <td><%= villages[i].avg_annual_energy_consumed %></td>
+                    <td><%= villages[i].year %></td>
+                    <td><%= villages[i].meter_id %></td>
+                </tr>
+            <% } %>
+        </table>
+
+    </body>
+</html>
+

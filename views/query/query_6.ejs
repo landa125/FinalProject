@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Query Number 6</title>
+</head>
+<body>
+<h1> Query Number 6 </h1>
+
+<table border="1">
+    <tr>
+        <th>meter id</th>
+        <th>total </th>
+    </tr>
+    <% for (var i = 0; i < results.length; i++) {%>  <tr>
+        <td><%= results[i].meter_id %></td>
+        <td><%= results[i].total %></td>
+        <%} %>
+    </tr>
+</table>
+</body>
+</html>

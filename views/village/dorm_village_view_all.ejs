@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Village - View All </title>
+</head>
+<body>
+
+<h1>Villages </h1>
+<a href="/dorm_village/add">Add New A Village</a>
+<table border="1">
+    <tr>
+
+        <th>ID</th>
+        <th>Village Name </th>
+        <th>Number Of Dorms</th>
+        <th>Number Of Rooms In Dorms</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    <% for(var i = 0; i < villages.length; i++) { %>
+    <tr>
+
+        <td><%= villages[i].village_id %></td>
+        <td><%= villages[i].village_name %></td>
+        <td><%= villages[i].number_of_dorms %></td>
+        <td><%= villages[i].number_of_rooms_in_dorms %></td>
+        <td>
+        <a href='/dorm_village/edit/?village_id=<%= villages[i].village_id %>'>
+            Edit
+        </a>
+        </td>
+        <td>
+        <a href='/dorm_village/delete/?village_id=<%= villages[i].village_id %>'>
+            Delete
+        </a>
+        </td>
+    </tr>
+    <% } %>
+</table>
+<% if(locals.was_successful_delete) { %>
+<div>
+    <p>You Successfully Deleted A Village!</p>
+</div>
+<% } %>
+</body>
+</html>

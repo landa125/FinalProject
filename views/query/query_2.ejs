@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Query Number 2: Display the dorms and the village they belong to.</title>
+</head>
+<body>
+<h1> Query Number 2: Display the dorms and the village they belong to.</h1>
+<table border="1">
+    <tr>
+        <th>village_name</th>
+        <th>dorm_name </th>
+    </tr>
+    <% for (var i = 0; i < results.length; i++) {%>  <tr>
+    <td><%= results[i].village_name %></td>
+    <td><%= results[i].dorm_name %></td>
+    <%} %>
+    </tr>
+</table>
+</body>
+</html>

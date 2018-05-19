@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Query Number 1</title>
+</head>
+<body>
+<h1> Query Number 1</h1>
+
+<table border="1">
+    <tr>
+        <th>dorm name </th>
+        <th>village name</th>
+    </tr>
+    <% for (var i = 0; i < results.length; i++) {%>
+    <tr>
+        <td><%= results[i].dorm_name %></td>
+        <td><%= results[i].village_name %></td>
+    <%} %>
+    </tr>
+</table>
+</body>
+</html>

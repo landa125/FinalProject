@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Village - Add</title>
+</head>
+<body>
+<h1>Edit The Village</h1>
+<form action="/dorm_village/update" method="get">
+    village_name: <input
+            id="village_name"
+            name="village_name"
+            type="text"
+            value="<%= village.village_name%>"
+
+    />
+
+    number_of_dorms: <input
+            id="number_of_dorms"
+            name="number_of_dorms"
+            type="text"
+            value="<%= village.number_of_dorms%>"
+
+    />
+
+    number_of_rooms_in_dorms: <input
+            id="number_of_rooms_in_dorms"
+            name="number_of_rooms_in_dorms"
+            type="text"
+            value="<%= village.number_of_rooms_in_dorms%>"
+    />
+
+    <input type="hidden"
+           id="village_id"
+           name="village_id"
+           value="<%= village.village_id %>"
+    />
+
+    <input type="submit" />
+
+
+</form>
+
+</body>
+</html>
