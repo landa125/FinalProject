@@ -14,13 +14,32 @@ exports.getAll = function(callback) {
 };
 
 exports.insert = function(params, callback) {
-    var query = 'INSERT INTO students(student_id, ssn, grade_level, first_name, last_name, dorm_name) VALUES (?,?,?,?,?,?)';
-    var queryData = [params.student_id, params.ssn, params.grade_level, params.first_name, params.last_name, params.dorm_name];
+    var query = 'INSERT INTO students(ssn, grade_level, first_name, last_name, dorm_name) VALUES (?,?,?,?,?)';
+    var queryData = [params.ssn, params.grade_level, params.first_name, params.last_name, params.dorm_name];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
     });
 };
+
+exports.getinfo = function(student_id, callback) {
+    var query = 'CALL student_getinfo(?)';
+    var queryData = [student_id];
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE students SET ssn = ?, grade_level = ?, first_name= ?, last_name = ?, dorm_name= ? WHERE meter_id = ?';
+    var queryData = [params.ssn, params.grade_level, params.first_name, params.last_name, params.dorm_name, params.student_id];
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+
+    });
+};
+
+
 
 exports.delete = function(params, callback) {
     var query = 'Delete FROM students WHERE student_id = ?';

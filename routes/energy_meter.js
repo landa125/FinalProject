@@ -33,6 +33,17 @@ router.get('/insert', function(req, res) {
         }
     });
 });
+router.get('/edit', function(req, res) {
+    energy_meter_dal.getinfo(req.query.meter_id, function(err, result) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            res.render('energy_meter/energyUpdate', {energy_meter: result[0][0], avg_annual_energy_consumed: result[1], year:result[2]}
+            );
+        }
+    });
+});
 
 
 router.get('/delete', function(req, res) {

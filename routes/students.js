@@ -18,7 +18,7 @@ router.get('/all',function(req,res,next){
 
 
 router.get('/add',function(req,res){
-    dormitory_dal.getAll(function(err,result) {
+    students_dal.getAll(function(err,result) {
         if (err) {
             res.send(err);
         }
@@ -36,6 +36,19 @@ router.get('/insert', function(req, res) {
         }
         else {
             res.redirect(302, '/student/all');
+        }
+    });
+});
+
+router.get('/edit', function(req, res) {
+    students_dal.getinfo(req.query.student_id, function(err, result) {
+        if (err) {
+            res.send(err);
+        }
+        else {
+            res.render('students/studentUpdate', {students: result[0][0], ssn: result[1],
+                grade_level:result[2], first_name:result[3],last_name:result[4],dorm_name:result[5]}
+            );
         }
     });
 });

@@ -20,3 +20,30 @@ exports.insert = function(params,callback){
         callback(err,result);
     });
 };
+
+exports.getinfo = function(dorm_id, callback) {
+    var query = 'CALL dormitory_getinfo(?)';
+    var queryData = [dorm_id];
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE dormitory SET dorm_name = ?, dorm_number = ?, number_of_students= ?, village_name= ?, meter_name= ? WHERE dorm_id = ?';
+    var queryData = [params.dorm_name, params.dorm_number, params.number_of_students, params.village_name, params.meter_name, params.dorm_id];
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+
+    });
+};
+
+exports.delete = function(params, callback) {
+    var query = 'Delete FROM dormitory WHERE dorm_id = ?';
+    var queryData = [params.dorm_id];
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result)
+    });
+};

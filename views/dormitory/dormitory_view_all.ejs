@@ -11,6 +11,7 @@
     <tr>
         <th>ID</th>
         <th>Dorm Name</th>
+        <th>Dorm Number</th>
         <th>Number of Students </th>
         <th>Village Name</th>
         <th>Meter Name</th>
@@ -21,21 +22,27 @@
     <tr>
         <td><%= dormitory[i].dorm_id %></td>
         <td><%= dormitory[i].dorm_name %></td>
+        <td><%= dormitory[i].dorm_number%></td>
         <td><%= dormitory[i].number_of_students%></td>
         <td><%= dormitory[i].village_name %></td>
         <td><%= dormitory[i].meter_name %></td>
         <td>
-        <a href='/dormitory/edit/?dorm_id=<%= dormitory[i].dorm_id %>'>
+        <a href='/dorms/edit/?dorm_id=<%= dormitory[i].dorm_id %>'>
             Edit
         </a>
         </td>
         <td>
-            <a href='/dormitory/delete/?dorm_id=<%= dormitory[i].dorm_id %>'>
+            <a href='/dorms/delete/?dorm_id=<%= dormitory[i].dorm_id %>'>
             Delete
         </a>
         </td>
     </tr>
     <% } %>
 </table>
+<% if(locals.was_successful_delete) { %>
+<div>
+    <p>You Successfully Deleted A Dorm!</p>
+</div>
+<% } %>
 </body>
 </html>

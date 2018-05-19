@@ -21,6 +21,23 @@ exports.insert = function(params, callback) {
         callback(err, result);
     });
 };
+exports.getinfo = function(meter_id, callback) {
+    var query = 'CALL energy_meter_getinfo(?)';
+    var queryData = [meter_id];
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE energy_meter SET meter_name = ?, avg_annual_energy_consumed = ?, year= ? WHERE meter_id = ?';
+    var queryData = [params.meter_name, params.avg_annual_energy_consumed, params.year, params.meter_id];
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+
+    });
+};
+
 
 exports.delete = function(params, callback) {
     var query = 'Delete FROM energy_meter WHERE meter_id = ?';

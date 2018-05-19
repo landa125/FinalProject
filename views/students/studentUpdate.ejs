@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students - Add</title>
+</head>
+<body>
+<h1>Edit The Student</h1>
+<form action="/students/update" method="get">
+
+    ssn: <input
+            id="ssn"
+            name="ssn"
+            type="text"
+            value="<%= students.ssn%>"
+
+    />
+
+    grade_level: <input
+            id="grade_level"
+            name="grade_level"
+            type="text"
+            value="<%= students.grade_level%>"
+
+    />
+
+    first_name: <input
+            id="first_name"
+            name="first_name"
+            type="text"
+            value="<%= students.first_name%>"
+    />
+    last_name: <input
+            id="last_name"
+            name="last_name"
+            type="text"
+            value="<%= students.last_name%>"
+    />
+
+    dorm_name: <input
+            id="dorm_name"
+            name="dorm_name"
+            type="text"
+            value="<%= students.dorm_name%>"
+    />
+
+    <input type="hidden"
+           id="student_id"
+           name="student_id"
+           value="<%= students.student_id %>"
+    />
+
+    <input type="submit" />
+
+
+</form>
+</body>
+</html>

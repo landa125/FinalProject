@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dorms - Add</title>
+</head>
+<body>
+<h1>Edit The Dorm </h1>
+<form action="/dorms/update" method="get">
+
+    dorm_name: <input
+            id="dorm_name"
+            name="dorm_name"
+            type="text"
+            value="<%= dorms.dorm_name%>"
+
+    />
+
+    dorm_number: <input
+            id="dorm_number"
+            name="dorm_number"
+            type="text"
+            value="<%= dorms.dorm_number%>"
+
+    />
+
+    number_of_students: <input
+            id="number_of_students"
+            name="number_of_students"
+            type="text"
+            value="<%= dorms.number_of_students%>"
+    />
+    village_name:<input
+            id="village_name"
+            name="village_name"
+            type="text"
+            value="<%= dorms.village_name%>"
+    />
+    meter_name:<input
+            id="meter_name"
+            name="meter_name"
+            type="text"
+            value="<%= dorms.meter_name%>"
+    />
+
+    <input type="hidden"
+           id="dorm_id"
+           name="dorm_id"
+           value="<%= dorms.dorm_id %>"
+    />
+    <input type="submit" />
+
+
+</form>
+</body>
+</html>
